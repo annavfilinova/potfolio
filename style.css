@@ -1135,11 +1135,6 @@ h2 {
   pointer-events: none;
   display: block;
   animation: phone-scroll 18s ease-in-out infinite;
-  animation-play-state: paused;
-}
-
-.work-card:hover .work-phone-screen {
-  animation-play-state: running;
 }
 
 @keyframes phone-scroll {
