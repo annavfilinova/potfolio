@@ -1,28 +1,33 @@
+// ── TOUCH DETECTION ──────────────────────────────────────
+const isTouch = window.matchMedia('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+
 // ── CUSTOM CURSOR ────────────────────────────────────────
-const cursorDot  = document.createElement('div');
-const cursorRing = document.createElement('div');
-cursorDot.className  = 'cursor-dot';
-cursorRing.className = 'cursor-ring';
-document.body.append(cursorDot, cursorRing);
+if (!isTouch) {
+  const cursorDot  = document.createElement('div');
+  const cursorRing = document.createElement('div');
+  cursorDot.className  = 'cursor-dot';
+  cursorRing.className = 'cursor-ring';
+  document.body.append(cursorDot, cursorRing);
 
-let mx = 0, my = 0, rx = 0, ry = 0;
+  let mx = 0, my = 0, rx = 0, ry = 0;
 
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursorDot.style.transform = `translate(${mx}px,${my}px)`;
-});
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursorDot.style.transform = `translate(${mx}px,${my}px)`;
+  });
 
-(function animRing() {
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  cursorRing.style.transform = `translate(${rx}px,${ry}px)`;
-  requestAnimationFrame(animRing);
-})();
+  (function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    cursorRing.style.transform = `translate(${rx}px,${ry}px)`;
+    requestAnimationFrame(animRing);
+  })();
 
-document.querySelectorAll('a,button,.service-card,.work-card,.faq-q,.svc-btn').forEach(el => {
-  el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-ring--hover'));
-  el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-ring--hover'));
-});
+  document.querySelectorAll('a,button,.service-card,.work-card,.faq-q,.svc-btn').forEach(el => {
+    el.addEventListener('mouseenter', () => cursorRing.classList.add('cursor-ring--hover'));
+    el.addEventListener('mouseleave', () => cursorRing.classList.remove('cursor-ring--hover'));
+  });
+}
 
 // ── CLICK SPARKS ─────────────────────────────────────────
 const SPARK_COLORS = ['#FF2D78','#00F5D4','#B026FF','#ffffff'];
@@ -176,6 +181,41 @@ function initMarquees() {
   });
 }
 document.fonts.ready.then(initMarquees);
+
+// ── HAMBURGER MENU ───────────────────────────────────────
+const burger    = document.getElementById('navBurger');
+const mobileNav = document.getElementById('navMobile');
+if (burger && mobileNav) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('is-open');
+    mobileNav.classList.toggle('is-open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('.nav-mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('is-open');
+      mobileNav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      mobileNav.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    });
+  });
+}
+
+// ── WORK CARD TAP-TO-FLIP ────────────────────────────────
+if (isTouch) {
+  document.querySelectorAll('.work-hint').forEach(el => {
+    el.textContent = 'нажми чтобы увидеть сайт';
+  });
+  document.querySelectorAll('.work-card').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('.work-open')) return;
+      card.classList.toggle('flipped');
+    });
+  });
+}
 
 // ── SERVICE SELECTOR ─────────────────────────────────────
 document.querySelectorAll('.svc-btn').forEach(btn => {
