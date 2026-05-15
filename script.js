@@ -204,18 +204,6 @@ if (burger && mobileNav) {
   });
 }
 
-// ── WORK CARD TAP-TO-FLIP ────────────────────────────────
-if (isTouch) {
-  document.querySelectorAll('.work-hint').forEach(el => {
-    el.textContent = 'нажми чтобы увидеть сайт';
-  });
-  document.querySelectorAll('.work-card').forEach(card => {
-    card.addEventListener('click', e => {
-      if (e.target.closest('.work-open')) return;
-      card.classList.toggle('flipped');
-    });
-  });
-}
 
 // ── SERVICE SELECTOR ─────────────────────────────────────
 document.querySelectorAll('.svc-btn').forEach(btn => {
