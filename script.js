@@ -235,11 +235,15 @@ if (contactForm) {
     btn.textContent = 'Отправляю...';
 
     try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 8000);
       const res  = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' })
+        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' }),
+        signal: controller.signal
       });
+      clearTimeout(timer);
       const data = await res.json();
       if (!data.ok) throw new Error(data.description);
 
