@@ -662,8 +662,12 @@ h2 {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
+}
+
+.service-card {
+  grid-column: span 2;
 }
 
 .service-card {
@@ -683,7 +687,7 @@ h2 {
 }
 
 .service-card--wide {
-  grid-column: auto;
+  grid-column: span 3;
 }
 
 .service-icon {
@@ -1759,7 +1763,8 @@ h2 {
   .section { padding: 50px 24px; }
 
   .services-grid { grid-template-columns: 1fr; }
-  .service-card--wide { grid-column: auto; }
+  .service-card,
+  .service-card--wide { grid-column: span 1; }
 
   .steps { flex-direction: column; gap: 32px; }
   .step-divider { display: none; }
