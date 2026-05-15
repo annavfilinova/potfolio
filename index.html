@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анна Филинова — лендинги, сайты, боты</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LAYER 3: AMBIENT GLOWS -->
+  <div class="glow-layer" aria-hidden="true">
+    <div class="glow glow--1"></div>
+    <div class="glow glow--2"></div>
+    <div class="glow glow--3"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <span class="nav-logo mono">АФ</span>
+    <ul class="nav-links">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#process">Как работаю</a></li>
+      <li><a href="#works">Работы</a></li>
+      <li><a href="#contact" class="nav-cta">Написать</a></li>
+    </ul>
+  </nav>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- BACK TO TOP -->
+  <button class="back-top" id="backTop" aria-label="Наверх">↑</button>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <!-- LAYER 5: FLOATING PARTICLES -->
+    <div class="particles" aria-hidden="true">
+      <i class="p p-cross p-pink"    style="top:18%;left:63%;--dur:9s;--delay:0s"></i>
+      <i class="p p-cross p-cyan"    style="top:74%;left:79%;--dur:12s;--delay:-4s"></i>
+      <i class="p p-cross p-purple"  style="top:48%;left:55%;--dur:15s;--delay:-9s"></i>
+      <i class="p p-dot   p-pink"    style="top:31%;right:13%;--dur:7s;--delay:-2s"></i>
+      <i class="p p-dot   p-purple"  style="top:57%;left:61%;--dur:10s;--delay:-6s"></i>
+      <i class="p p-dot   p-cyan"    style="top:83%;left:49%;--dur:8s;--delay:-1s"></i>
+      <i class="p p-diamond p-pink"  style="top:23%;left:77%;--dur:11s;--delay:-3s"></i>
+      <i class="p p-diamond p-purple" style="top:66%;right:9%;--dur:14s;--delay:-7s"></i>
+      <i class="p p-ring  p-cyan"    style="top:43%;left:69%;--dur:13s;--delay:-5s"></i>
+      <i class="p p-ring  p-pink"    style="top:88%;left:72%;--dur:16s;--delay:-11s"></i>
+    </div>
+
+    <!-- LEFT: text -->
+    <div class="hero-content">
+      <div class="availability">
+        <span class="dot"></span>
+        <span>доступна для проектов</span>
+      </div>
+
+      <h1>
+        <span class="h1-pink">БЫСТРО.</span><br>
+        <span class="h1-cyan">ЧЁТКО.</span><br>
+        РАБОТАЕТ.
+      </h1>
+
+      <p class="hero-sub">
+        Лендинги, сайты, Telegram-боты и презентации — с договором, фиксированной ценой и в срок.
+        <span style="white-space:nowrap">Сдаю готовый сайт, а не просто файлы.</span>
+      </p>
+
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary">Написать мне</a>
+        <a href="#works" class="btn-secondary">Посмотреть работы</a>
+      </div>
+      <p class="hero-note"><span class="hero-highlight">Первая консультация бесплатно</span> — разберём задачу вместе</p>
+    </div>
+
+    <!-- RIGHT: 3D visual composition -->
+    <div class="hero-visual" aria-hidden="true">
+
+      <!-- Background orbital rings -->
+      <svg class="v-rings" viewBox="0 0 480 480" fill="none">
+        <circle cx="240" cy="240" r="220" stroke="rgba(255,45,120,0.06)"  stroke-width="0.8" stroke-dasharray="6 5"/>
+        <circle cx="240" cy="240" r="168" stroke="rgba(0,245,212,0.06)"   stroke-width="0.8" stroke-dasharray="3 9"/>
+        <circle cx="240" cy="240" r="112" stroke="rgba(176,38,255,0.06)"  stroke-width="0.8"/>
+        <circle cx="240" cy="240" r="4"   fill="rgba(255,45,120,0.5)"/>
+        <circle cx="240" cy="20"  r="3"   fill="rgba(0,245,212,0.6)"/>
+        <circle cx="460" cy="240" r="2.5" fill="rgba(176,38,255,0.5)"/>
+      </svg>
+
+      <!-- Main terminal -->
+      <div class="v-terminal">
+        <div class="v-terminal__bar">
+          <span class="v-dot v-dot--pink"></span>
+          <span class="v-dot v-dot--yellow"></span>
+          <span class="v-dot v-dot--cyan"></span>
+          <span class="v-terminal__title">anna — services</span>
+        </div>
+        <div class="v-terminal__body">
+          <p class="v-line"><span class="v-prompt">$</span> anna --services</p>
+          <div class="v-spacer"></div>
+          <div class="v-row">
+            <span class="v-name">лендинг</span>
+            <div class="v-bar"><div class="v-fill v-fill--pink"   style="width:68%"></div></div>
+            <span class="v-price">15K</span>
+          </div>
+          <div class="v-row">
+            <span class="v-name">сайт</span>
+            <div class="v-bar"><div class="v-fill v-fill--cyan"   style="width:100%"></div></div>
+            <span class="v-price">35K</span>
+          </div>
+          <div class="v-row">
+            <span class="v-name">бот</span>
+            <div class="v-bar"><div class="v-fill v-fill--purple" style="width:46%"></div></div>
+            <span class="v-price">10K</span>
+          </div>
+          <div class="v-row">
+            <span class="v-name">слайды</span>
+            <div class="v-bar"><div class="v-fill v-fill--pink"   style="width:28%"></div></div>
+            <span class="v-price">5K</span>
+          </div>
+          <div class="v-row">
+            <span class="v-name">ниша</span>
+            <div class="v-bar"><div class="v-fill v-fill--purple" style="width:38%"></div></div>
+            <span class="v-price">8K</span>
+          </div>
+          <div class="v-row">
+            <span class="v-name">tilda</span>
+            <div class="v-bar"><div class="v-fill v-fill--cyan"   style="width:20%"></div></div>
+            <span class="v-price">3K</span>
+          </div>
+          <div class="v-spacer"></div>
+          <p class="v-line">
+            <span class="v-prompt">$</span>
+            <span class="v-muted">status:</span>
+            <span class="v-online">● доступна</span>
+          </p>
+          <p class="v-cursor">▋</p>
+        </div>
+      </div>
+
+      <!-- Floating card: stat -->
+      <div class="v-card v-card--stat">
+        <div class="v-card__label">средний срок</div>
+        <div class="v-card__value">7 <span>дней</span></div>
+        <div class="v-card__sub">лендинг под ключ</div>
+      </div>
+
+      <!-- Floating card: chips -->
+      <div class="v-card v-card--chips">
+        <span class="chip chip--cyan">работает везде</span>
+        <span class="chip chip--pink">опубликую сама</span>
+        <span class="chip chip--purple">правки в цене</span>
+        <span class="chip chip--cyan">работаем по договору</span>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section section--about">
+    <span class="label">О СЕБЕ</span>
+    <div class="about-inner">
+
+      <!-- Фото -->
+      <div class="about-photo">
+        <div class="about-photo__glow"></div>
+        <img src="anna_hero.png" alt="Анна Филинова" class="about-photo__img">
+        <div class="about-photo__ring about-photo__ring--1"></div>
+        <div class="about-photo__ring about-photo__ring--2"></div>
+        <div class="about-photo__star">✦</div>
+      </div>
+
+      <!-- Текст + статы -->
+      <div class="about-right">
+        <div class="about-text">
+          <h2>Привет, я Анна</h2>
+          <p>Помогаю предпринимателям и специалистам выглядеть профессионально в интернете — делаю сайты, боты и презентации, которые работают на вашу задачу, а не просто красиво выглядят.</p>
+          <p>Мне важно, чтобы вы понимали что происходит на каждом этапе. Поэтому я всегда называю цену и срок до начала работы, работаю по договору и на связи весь проект.</p>
+          <p class="about-tagline">Не пропадаю. Не затягиваю. Сдаю в срок.</p>
+        </div>
+        <div class="about-stats">
+          <div class="about-stat">
+            <span class="about-stat__num">6</span>
+            <span class="about-stat__label">услуг в прайсе</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">100%</span>
+            <span class="about-stat__label">работа по договору</span>
+          </div>
+          <div class="about-stat">
+            <span class="about-stat__num">1 день</span>
+            <span class="about-stat__label">время ответа</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <span class="label">УСЛУГИ</span>
+    <h2>Что делаю</h2>
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-icon mono">01</div>
+        <h3>Лендинг</h3>
+        <p>Одностраничный сайт под конкретную задачу. Цена фиксируется до старта — в конце не будет сюрпризов.</p>
+        <div class="service-chips">
+          <span class="chip chip--pink">работает на телефоне</span>
+          <span class="chip chip--cyan">опубликую сама</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">15 000 — 25 000 ₽</span>
+          <span class="mono muted">5–7 дней</span>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon mono">02</div>
+        <h3>Многостраничный сайт</h3>
+        <p>Сайт с разделами: главная, услуги, портфолио, контакты. Сдаю опубликованным — сразу можно отправлять клиентам.</p>
+        <div class="service-chips">
+          <span class="chip chip--pink">работает на телефоне</span>
+          <span class="chip chip--cyan">опубликую сама</span>
+          <span class="chip chip--purple">сможете редактировать</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">35 000 — 60 000 ₽</span>
+          <span class="mono muted">10–14 дней</span>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon mono">03</div>
+        <h3>Телеграм-бот</h3>
+        <p>Бот под ваш сценарий: запись, FAQ, рассылка, заявки. Настраиваю полностью — вы получаете готовый инструмент.</p>
+        <div class="service-chips">
+          <span class="chip chip--cyan">под вашу задачу</span>
+          <span class="chip chip--purple">настрою с нуля</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">10 000 — 20 000 ₽</span>
+          <span class="mono muted">3–7 дней</span>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon mono">04</div>
+        <h3>Презентация</h3>
+        <p>Структурированный deck для питча, партнёров или продажи услуги.</p>
+        <div class="service-chips">
+          <span class="chip chip--pink">аккуратный дизайн</span>
+          <span class="chip chip--cyan">пришлю файл</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">5 000 — 10 000 ₽</span>
+          <span class="mono muted">2–3 дня</span>
+        </div>
+      </article>
+
+      <article class="service-card service-card--wide">
+        <div class="service-icon mono">05</div>
+        <h3>Анализ ниши + воронка</h3>
+        <p>Разбираю конкурентов и описываю путь клиента до покупки. Никаких абстрактных советов — конкретный PDF с планом действий.</p>
+        <div class="service-chips">
+          <span class="chip chip--purple">анализ конкурентов</span>
+          <span class="chip chip--cyan">стратегия</span>
+          <span class="chip chip--pink">PDF-отчёт</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">8 000 — 15 000 ₽</span>
+          <span class="mono muted">3–5 дней</span>
+        </div>
+      </article>
+
+      <article class="service-card service-card--wide">
+        <div class="service-icon mono">06</div>
+        <h3>Таплинк и Tilda</h3>
+        <p>Мини-сайт на Taplink или лендинг на Tilda — быстрый старт без большого бюджета. Сдаю готовым, объясню как редактировать.</p>
+        <div class="service-chips">
+          <span class="chip chip--pink">Taplink</span>
+          <span class="chip chip--cyan">Tilda</span>
+          <span class="chip chip--purple">сможете редактировать</span>
+        </div>
+        <div class="service-footer">
+          <span class="price">3 000 — 15 000 ₽</span>
+          <span class="mono muted">3–5 дней</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- MOTION -->
+  <section class="motion-section">
+
+    <div class="orbit-bg" aria-hidden="true">
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring"></div>
+      <div class="orbit-ring"></div>
+    </div>
+
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="marquee-item">Лендинг</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Многостраничный сайт</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Телеграм-бот</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Презентация</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Анализ ниши</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Taplink</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Tilda</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Лендинг</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Многостраничный сайт</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Телеграм-бот</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Презентация</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Анализ ниши</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Taplink</span><span class="marquee-sep">·</span>
+        <span class="marquee-item">Tilda</span><span class="marquee-sep">·</span>
+      </div>
+    </div>
+
+    <div class="motion-stats">
+      <div class="stat">
+        <div class="stat-num" data-target="7" data-suffix=" дней">0</div>
+        <div class="stat-label">средний срок лендинга</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="6">0</div>
+        <div class="stat-label">услуг в прайсе</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="100" data-suffix="%">0</div>
+        <div class="stat-label">правки включены</div>
+      </div>
+    </div>
+
+    <div class="marquee-wrap">
+      <div class="marquee-track marquee-track--reverse">
+        <span class="marquee-item marquee-item--cyan">Быстро</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">По делу</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Работает</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Без воды</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Чётко</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Быстро</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">По делу</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Работает</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Без воды</span><span class="marquee-sep">·</span>
+        <span class="marquee-item marquee-item--cyan">Чётко</span><span class="marquee-sep">·</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="section">
+    <span class="label">КАК РАБОТАЮ</span>
+    <h2>Четыре шага</h2>
+    <div class="steps">
+
+      <div class="step">
+        <span class="step-num mono">01</span>
+        <h3>Описываешь задачу</h3>
+        <p>Оставляешь заявку или пишешь в Telegram. Нет ТЗ — не страшно, первая консультация бесплатно.</p>
+      </div>
+
+      <div class="step-divider" aria-hidden="true">→</div>
+
+      <div class="step">
+        <span class="step-num mono">02</span>
+        <h3>Называю цену и срок</h3>
+        <p>Фиксирую стоимость до начала работы — цена не изменится в процессе. Никаких доплат «за дополнительные правки».</p>
+      </div>
+
+      <div class="step-divider" aria-hidden="true">→</div>
+
+      <div class="step">
+        <span class="step-num mono">03</span>
+        <h3>Подписываем договор</h3>
+        <p>Работаем официально — договор фиксирует объём, сроки и цену. Это защищает вас: я не пропаду и не сдвину дедлайн.</p>
+      </div>
+
+      <div class="step-divider" aria-hidden="true">→</div>
+
+      <div class="step">
+        <span class="step-num mono">04</span>
+        <h3>Сдаю готовым — не файлами</h3>
+        <p>Отдаю опубликованный и работающий результат. Одна итерация правок включена в цену — не придётся доплачивать.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works" class="section">
+    <span class="label">РАБОТЫ</span>
+    <h2>Примеры</h2>
+    <div class="works-grid">
+
+      <!-- Flip card 1 -->
+      <div class="work-card">
+        <div class="work-card-inner">
+          <div class="work-face work-face--front">
+            <div class="work-preview">
+              <svg class="work-svg" viewBox="0 0 560 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="560" height="224" fill="#060e1a"/>
+                <defs>
+                  <pattern id="cg" width="28" height="28" patternUnits="userSpaceOnUse">
+                    <path d="M28 0H0V28" stroke="rgba(255,255,255,0.035)" stroke-width="0.5"/>
+                  </pattern>
+                  <radialGradient id="cglow" cx="75%" cy="25%" r="55%">
+                    <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.07"/>
+                    <stop offset="100%" stop-color="#00F5D4" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="560" height="224" fill="url(#cg)"/>
+                <rect width="560" height="224" fill="url(#cglow)"/>
+                <rect x="28" y="18" width="504" height="190" rx="7" fill="#0c1823" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
+                <rect x="28" y="18" width="504" height="30" rx="7" fill="#111f2e"/>
+                <rect x="28" y="38" width="504" height="10" fill="#111f2e"/>
+                <circle cx="48" cy="33" r="4.5" fill="rgba(255,45,120,0.7)"/>
+                <circle cx="62" cy="33" r="4.5" fill="rgba(255,200,50,0.35)"/>
+                <circle cx="76" cy="33" r="4.5" fill="rgba(0,245,212,0.35)"/>
+                <rect x="96" y="24" width="200" height="17" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+                <rect x="112" y="30" width="120" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <rect x="40" y="55" width="480" height="22" fill="rgba(255,255,255,0.015)"/>
+                <rect x="50" y="63" width="44" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
+                <rect x="462" y="61" width="52" height="11" rx="3" fill="none" stroke="rgba(0,245,212,0.45)" stroke-width="0.8"/>
+                <rect x="50" y="92" width="200" height="15" rx="2" fill="rgba(255,255,255,0.88)"/>
+                <rect x="50" y="113" width="160" height="15" rx="2" fill="rgba(255,255,255,0.72)"/>
+                <rect x="50" y="168" width="88" height="22" rx="3" fill="#FF2D78"/>
+                <rect x="146" y="168" width="70" height="22" rx="3" fill="none" stroke="rgba(0,245,212,0.5)" stroke-width="0.8"/>
+                <rect x="294" y="78" width="222" height="124" rx="5" fill="rgba(0,245,212,0.025)" stroke="rgba(0,245,212,0.1)" stroke-width="0.8"/>
+                <path d="M294 202 L334 146 L366 166 L400 118 L436 140 L474 96 L516 116 L516 202 Z" fill="rgba(0,245,212,0.08)"/>
+                <circle cx="478" cy="100" r="16" fill="none" stroke="rgba(0,245,212,0.22)" stroke-width="0.8"/>
+              </svg>
+              <span class="work-tag">ЛЕНДИНГ</span>
+            </div>
+            <div class="work-info">
+              <h3>Аренда коттеджа</h3>
+              <p>Одностраничный сайт для частной аренды загородного дома — бронирование, галерея, условия.</p>
+            </div>
+            <div class="work-hint">наведи чтобы увидеть сайт</div>
+          </div>
+          <div class="work-face work-face--back">
+            <div class="iframe-clip">
+              <iframe src="https://fil-in.gitverse.site/cottage-rental-site/" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+            </div>
+            <a href="https://fil-in.gitverse.site/cottage-rental-site/" class="work-open" target="_blank" rel="noopener">
+              <span>Открыть сайт</span><span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flip card 2 -->
+      <div class="work-card">
+        <div class="work-card-inner">
+          <div class="work-face work-face--front">
+            <div class="work-preview">
+              <svg class="work-svg" viewBox="0 0 560 224" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="560" height="224" fill="#090707"/>
+                <defs>
+                  <pattern id="bstripe" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect width="3" height="32" fill="rgba(255,45,120,0.04)"/>
+                  </pattern>
+                  <radialGradient id="bglow" cx="22%" cy="50%" r="45%">
+                    <stop offset="0%" stop-color="#FF2D78" stop-opacity="0.1"/>
+                    <stop offset="100%" stop-color="#FF2D78" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="560" height="224" fill="url(#bstripe)"/>
+                <rect width="560" height="224" fill="url(#bglow)"/>
+                <line x1="390" y1="16" x2="548" y2="208" stroke="rgba(255,45,120,0.16)" stroke-width="1.2"/>
+                <line x1="548" y1="16" x2="390" y2="208" stroke="rgba(255,45,120,0.16)" stroke-width="1.2"/>
+                <circle cx="469" cy="112" r="54" fill="none" stroke="rgba(255,45,120,0.1)" stroke-width="0.8"/>
+                <rect x="28" y="28" width="6" height="168" rx="3" fill="rgba(255,45,120,0.85)"/>
+                <rect x="50" y="40" width="220" height="20" rx="2" fill="rgba(255,255,255,0.92)"/>
+                <rect x="50" y="68" width="175" height="20" rx="2" fill="rgba(255,255,255,0.75)"/>
+                <rect x="50" y="96" width="255" height="20" rx="2" fill="rgba(255,45,120,0.65)"/>
+                <rect x="50" y="190" width="104" height="24" rx="3" fill="rgba(255,45,120,0.9)"/>
+              </svg>
+              <span class="work-tag">ЛЕНДИНГ</span>
+            </div>
+            <div class="work-info">
+              <h3>Барберная</h3>
+              <p>Сайт-визитка для барбершопа с описанием услуг и контактами.</p>
+            </div>
+            <div class="work-hint">наведи чтобы увидеть сайт</div>
+          </div>
+          <div class="work-face work-face--back">
+            <div class="iframe-clip">
+              <iframe src="https://fil-in.gitverse.site/shura-barber/" loading="lazy" scrolling="no" tabindex="-1"></iframe>
+            </div>
+            <a href="https://fil-in.gitverse.site/shura-barber/" class="work-open" target="_blank" rel="noopener">
+              <span>Открыть сайт</span><span>↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--faq">
+    <span class="label">FAQ</span>
+    <h2>Частые вопросы</h2>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">Как происходит оплата?</summary>
+        <p class="faq-a">50% предоплата до начала работы, 50% после сдачи результата. Всё фиксируется в договоре — никаких устных договорённостей.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Что если мне не понравится результат?</summary>
+        <p class="faq-a">Одна итерация правок включена в цену. Перед стартом мы фиксируем что именно нужно сделать — так разногласий почти не бывает. Если что-то пошло не так, разберёмся вместе.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Нужно ли готовое ТЗ?</summary>
+        <p class="faq-a">Нет. Достаточно объяснить задачу своими словами — я помогу сформулировать что именно нужно и предложу решение. Первая консультация бесплатно.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Сколько времени занимает проект?</summary>
+        <p class="faq-a">Зависит от задачи: лендинг — 5–7 дней, многостраничный сайт — 10–14 дней, Telegram-бот — 3–7 дней. Срок фиксируется в договоре и не сдвигается.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Вы работаете официально?</summary>
+        <p class="faq-a">Да, работаю по договору. Это защищает вас: зафиксированы объём, цена и сроки. Никаких «я пропал» или «нужно доплатить».</p>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Что будет после сдачи проекта?</summary>
+        <p class="faq-a">Передаю все доступы, объясняю как пользоваться. Если возникнут вопросы по проекту — отвечу. Мелкие правки в течение недели после сдачи — бесплатно.</p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section--contact">
+    <span class="label">КОНТАКТ</span>
+    <h2>Есть задача?</h2>
+    <p class="contact-sub">Уже подводил один фрилансер? Работаю по договору — отвечу в течение дня.</p>
+
+    <form class="contact-form" action="mailto:annafilinova34@gmail.com" method="post" enctype="text/plain">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name">Как вас зовут</label>
+          <input id="cf-name" name="Имя" type="text" placeholder="Имя или компания" required>
+        </div>
+        <div class="form-field">
+          <label for="cf-contact">Telegram или телефон</label>
+          <input id="cf-contact" name="Контакт" type="text" placeholder="@username или +7..." required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Что нужно сделать</label>
+        <div class="form-services" id="cf-services">
+          <button type="button" class="svc-btn" data-value="Лендинг">Лендинг</button>
+          <button type="button" class="svc-btn" data-value="Многостраничный сайт">Многостраничный сайт</button>
+          <button type="button" class="svc-btn" data-value="Телеграм-бот">Телеграм-бот</button>
+          <button type="button" class="svc-btn" data-value="Презентация">Презентация</button>
+          <button type="button" class="svc-btn" data-value="Анализ ниши и воронка">Анализ ниши и воронка</button>
+          <button type="button" class="svc-btn" data-value="Taplink / Tilda">Taplink / Tilda</button>
+          <button type="button" class="svc-btn" data-value="Другое">Другое</button>
+        </div>
+        <input type="hidden" name="Услуга" id="cf-service-val">
+      </div>
+      <div class="form-field">
+        <label for="cf-task">Расскажите подробнее</label>
+        <textarea id="cf-task" name="Задача" placeholder="Опишите задачу — что за проект, что хотите получить. Нет готового ТЗ — не страшно." rows="4"></textarea>
+
+      </div>
+      <div class="form-consent">
+        <input type="checkbox" id="cf-consent" required>
+        <label for="cf-consent">Согласен(на) на <a href="privacy.html" target="_blank">обработку персональных данных</a></label>
+      </div>
+      <div class="form-footer">\
+        <button type="submit" class="btn-primary">Отправить заявку</button>
+        <a href="https://t.me/AnnaFilinova" class="btn-secondary" target="_blank">Написать в Telegram</a>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <span class="mono muted">© 2026 Анна Филинова</span>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
