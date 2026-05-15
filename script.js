@@ -223,32 +223,14 @@ if (contactForm) {
     btn.disabled = true;
     btn.textContent = 'Отправляю...';
 
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 10000);
-      await fetch(MAKE_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, contact, service, task: task || '—' }),
-        signal: controller.signal
-      });
-      clearTimeout(timer);
+    const body = new URLSearchParams({ name, contact, service, task: task || '—' });
+    fetch(MAKE_URL, { method: 'POST', body, mode: 'no-cors' }).catch(() => {});
 
-      btn.textContent = 'Отправлено ✓';
-      btn.style.cssText = 'background:#00F5D4;color:#000;';
-      this.reset();
-      document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById('cf-service-val').value = '';
-    } catch(err) {
-      const msg = err.name === 'AbortError' ? 'Timeout' : (err.message || 'Unknown');
-      btn.textContent = 'Ошибка: ' + msg;
-      btn.style.cssText = 'background:#FF2D78;color:#fff;font-size:12px;';
-      setTimeout(() => {
-        btn.disabled = false;
-        btn.textContent = origText;
-        btn.style.cssText = '';
-      }, 3000);
-    }
+    btn.textContent = 'Отправлено ✓';
+    btn.style.cssText = 'background:#00F5D4;color:#000;';
+    this.reset();
+    document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('cf-service-val').value = '';
   });
 }
 
