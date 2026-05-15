@@ -1545,6 +1545,65 @@ h2 {
   flex-wrap: wrap;
 }
 
+/* ── PROMO BLOCK ── */
+
+.promo-block {
+  max-width: 640px;
+  margin: 0 auto 24px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 45, 120, .28);
+  border-radius: 12px;
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+}
+
+.promo-slots {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--pink);
+}
+
+.promo-slots strong { color: #fff; }
+
+.promo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--pink);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.promo-bonus {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.promo-bonus strong { color: var(--cyan); }
+.promo-gift { font-size: 1.1rem; flex-shrink: 0; }
+
 /* ── CONTACT FORM ── */
 
 .contact-form {
