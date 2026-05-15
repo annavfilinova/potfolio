@@ -205,8 +205,8 @@ if (burger && mobileNav) {
 }
 
 
-// ── CONTACT FORM → WEB3FORMS ─────────────────────────────
-const W3F_KEY = 'd63d91ee-0bbf-4aaf-9d62-f106371e8c12';
+// ── CONTACT FORM → MAKE WEBHOOK ──────────────────────────
+const MAKE_URL = 'https://hook.eu1.make.com/gk7l9b7pb7cq45371ydp7p85e2bhdt6i';
 
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
@@ -226,21 +226,13 @@ if (contactForm) {
     try {
       const controller = new AbortController();
       const timer = setTimeout(() => controller.abort(), 10000);
-      const res = await fetch('https://api.web3forms.com/submit', {
+      await fetch(MAKE_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: W3F_KEY,
-          subject:    'Новая заявка с портфолио',
-          from_name:  name,
-          name, contact, service,
-          message: task || '—'
-        }),
+        body: JSON.stringify({ name, contact, service, task: task || '—' }),
         signal: controller.signal
       });
       clearTimeout(timer);
-      const data = await res.json();
-      if (!data.success) throw new Error(data.message);
 
       btn.textContent = 'Отправлено ✓';
       btn.style.cssText = 'background:#00F5D4;color:#000;';
