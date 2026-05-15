@@ -205,6 +205,61 @@ if (burger && mobileNav) {
 }
 
 
+// ── CONTACT FORM → TELEGRAM ──────────────────────────────
+const TG_TOKEN = '740898752:AAHTGV-47PYZBfQNs22I6EKnv10WFrlMkzk';
+const TG_CHAT  = '611274583';
+
+function escHtml(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const name    = escHtml(document.getElementById('cf-name').value.trim());
+    const contact = escHtml(document.getElementById('cf-contact').value.trim());
+    const service = escHtml(document.getElementById('cf-service-val').value || 'не выбрана');
+    const task    = escHtml(document.getElementById('cf-task').value.trim());
+
+    const text = `🔔 <b>Новая заявка с портфолио</b>\n\n`
+      + `👤 <b>Имя:</b> ${name}\n`
+      + `📱 <b>Контакт:</b> ${contact}\n`
+      + `🛠 <b>Услуга:</b> ${service}\n`
+      + (task ? `📝 <b>Задача:</b> ${task}` : '');
+
+    const btn = this.querySelector('button[type="submit"]');
+    const origText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Отправляю...';
+
+    try {
+      const res  = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' })
+      });
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.description);
+
+      btn.textContent = 'Отправлено ✓';
+      btn.style.cssText = 'background:#00F5D4;color:#000;';
+      this.reset();
+      document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('cf-service-val').value = '';
+    } catch(err) {
+      btn.textContent = 'Ошибка — напиши в Telegram';
+      btn.style.cssText = 'background:#FF2D78;color:#fff;';
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = origText;
+        btn.style.cssText = '';
+      }, 3000);
+    }
+  });
+}
+
 // ── SERVICE SELECTOR ─────────────────────────────────────
 document.querySelectorAll('.svc-btn').forEach(btn => {
   btn.addEventListener('click', () => {
