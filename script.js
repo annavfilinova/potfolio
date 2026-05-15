@@ -205,29 +205,18 @@ if (burger && mobileNav) {
 }
 
 
-// ── CONTACT FORM → TELEGRAM ──────────────────────────────
-const TG_TOKEN = '8740898752:AAHTGV-47PYZBfQNs22I6EKnv10WFrlMkzk';
-const TG_CHAT  = '611274583';
-
-function escHtml(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
+// ── CONTACT FORM → WEB3FORMS ─────────────────────────────
+const W3F_KEY = 'd63d91ee-0bbf-4aaf-9d62-f106371e8c12';
 
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const name    = escHtml(document.getElementById('cf-name').value.trim());
-    const contact = escHtml(document.getElementById('cf-contact').value.trim());
-    const service = escHtml(document.getElementById('cf-service-val').value || 'не выбрана');
-    const task    = escHtml(document.getElementById('cf-task').value.trim());
-
-    const text = `🔔 <b>Новая заявка с портфолио</b>\n\n`
-      + `👤 <b>Имя:</b> ${name}\n`
-      + `📱 <b>Контакт:</b> ${contact}\n`
-      + `🛠 <b>Услуга:</b> ${service}\n`
-      + (task ? `📝 <b>Задача:</b> ${task}` : '');
+    const name    = document.getElementById('cf-name').value.trim();
+    const contact = document.getElementById('cf-contact').value.trim();
+    const service = document.getElementById('cf-service-val').value || 'не выбрана';
+    const task    = document.getElementById('cf-task').value.trim();
 
     const btn = this.querySelector('button[type="submit"]');
     const origText = btn.textContent;
@@ -236,15 +225,22 @@ if (contactForm) {
 
     try {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 8000);
-      const params = new URLSearchParams({ chat_id: TG_CHAT, text, parse_mode: 'HTML' });
-      const res = await fetch(
-        `https://api.telegram.org/bot${TG_TOKEN}/sendMessage?${params}`,
-        { signal: controller.signal }
-      );
+      const timer = setTimeout(() => controller.abort(), 10000);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: W3F_KEY,
+          subject:    'Новая заявка с портфолио',
+          from_name:  name,
+          name, contact, service,
+          message: task || '—'
+        }),
+        signal: controller.signal
+      });
       clearTimeout(timer);
       const data = await res.json();
-      if (!data.ok) throw new Error(data.description);
+      if (!data.success) throw new Error(data.message);
 
       btn.textContent = 'Отправлено ✓';
       btn.style.cssText = 'background:#00F5D4;color:#000;';
