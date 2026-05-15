@@ -407,44 +407,35 @@
             <div class="work-preview">
               <svg class="work-svg" viewBox="0 0 560 224" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="560" height="224" fill="#060e1a"/>
-                <!-- browser chrome -->
-                <rect x="10" y="6" width="540" height="212" rx="6" fill="#0c1823" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-                <rect x="10" y="6" width="540" height="22" rx="5" fill="#111f2e"/>
-                <rect x="10" y="20" width="540" height="8" fill="#111f2e"/>
-                <circle cx="27" cy="17" r="4" fill="rgba(255,45,120,0.6)"/>
-                <circle cx="41" cy="17" r="4" fill="rgba(255,200,50,0.3)"/>
-                <circle cx="55" cy="17" r="4" fill="rgba(0,245,212,0.3)"/>
-                <!-- Навигация -->
-                <rect x="10" y="28" width="540" height="20" fill="rgba(255,255,255,0.03)"/>
-                <rect x="10" y="28" width="3" height="20" fill="rgba(255,255,255,0.3)"/>
-                <text x="20" y="41" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.55)" letter-spacing="0.8">НАВИГАЦИЯ</text>
-                <text x="102" y="41" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.22)">— логотип, меню, кнопка бронирования</text>
-                <!-- Главный экран -->
-                <rect x="10" y="48" width="540" height="48" fill="rgba(255,45,120,0.05)"/>
-                <rect x="10" y="48" width="3" height="48" fill="rgba(255,45,120,0.85)"/>
-                <text x="20" y="62" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(255,45,120,0.95)">ГЛАВНЫЙ ЭКРАН</text>
-                <text x="20" y="75" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.4)">Фото коттеджа, оффер, кнопка «Забронировать»</text>
-                <text x="20" y="88" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.25)">Цепляет с первого взгляда и объясняет суть</text>
-                <!-- Галерея -->
-                <rect x="10" y="96" width="540" height="28" fill="rgba(0,245,212,0.04)"/>
-                <rect x="10" y="96" width="3" height="28" fill="rgba(0,245,212,0.85)"/>
-                <text x="20" y="108" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(0,245,212,0.9)">ГАЛЕРЕЯ</text>
-                <text x="20" y="119" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.35)">Фотографии дома, участка и интерьера</text>
-                <!-- Удобства + Стоимость -->
-                <rect x="10" y="124" width="268" height="28" fill="rgba(176,38,255,0.05)"/>
-                <rect x="10" y="124" width="3" height="28" fill="rgba(176,38,255,0.75)"/>
-                <text x="20" y="136" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="rgba(176,38,255,0.9)">УДОБСТВА</text>
-                <text x="20" y="147" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)">Что входит в аренду</text>
-                <rect x="282" y="124" width="268" height="28" fill="rgba(255,45,120,0.04)"/>
-                <rect x="282" y="124" width="3" height="28" fill="rgba(255,45,120,0.5)"/>
-                <text x="292" y="136" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="rgba(255,45,120,0.85)">СТОИМОСТЬ</text>
-                <text x="292" y="147" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)">Тарифы по дням и сезонам</text>
-                <!-- Форма бронирования -->
-                <rect x="10" y="152" width="540" height="66" fill="rgba(0,245,212,0.06)"/>
-                <rect x="10" y="152" width="3" height="66" fill="rgba(0,245,212,0.85)"/>
-                <text x="20" y="166" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(0,245,212,0.9)">ФОРМА БРОНИРОВАНИЯ</text>
-                <text x="20" y="179" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.35)">Дата заезда/выезда, количество гостей, контакт</text>
-                <text x="20" y="191" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.25)">Заявка приходит хозяину в Telegram сразу после отправки</text>
+                <defs>
+                  <pattern id="cg" width="28" height="28" patternUnits="userSpaceOnUse">
+                    <path d="M28 0H0V28" stroke="rgba(255,255,255,0.035)" stroke-width="0.5"/>
+                  </pattern>
+                  <radialGradient id="cglow" cx="75%" cy="25%" r="55%">
+                    <stop offset="0%" stop-color="#00F5D4" stop-opacity="0.07"/>
+                    <stop offset="100%" stop-color="#00F5D4" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="560" height="224" fill="url(#cg)"/>
+                <rect width="560" height="224" fill="url(#cglow)"/>
+                <rect x="28" y="18" width="504" height="190" rx="7" fill="#0c1823" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
+                <rect x="28" y="18" width="504" height="30" rx="7" fill="#111f2e"/>
+                <rect x="28" y="38" width="504" height="10" fill="#111f2e"/>
+                <circle cx="48" cy="33" r="4.5" fill="rgba(255,45,120,0.7)"/>
+                <circle cx="62" cy="33" r="4.5" fill="rgba(255,200,50,0.35)"/>
+                <circle cx="76" cy="33" r="4.5" fill="rgba(0,245,212,0.35)"/>
+                <rect x="96" y="24" width="200" height="17" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="0.5"/>
+                <rect x="112" y="30" width="120" height="5" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <rect x="40" y="55" width="480" height="22" fill="rgba(255,255,255,0.015)"/>
+                <rect x="50" y="63" width="44" height="7" rx="2" fill="rgba(255,255,255,0.4)"/>
+                <rect x="462" y="61" width="52" height="11" rx="3" fill="none" stroke="rgba(0,245,212,0.45)" stroke-width="0.8"/>
+                <rect x="50" y="92" width="200" height="15" rx="2" fill="rgba(255,255,255,0.88)"/>
+                <rect x="50" y="113" width="160" height="15" rx="2" fill="rgba(255,255,255,0.72)"/>
+                <rect x="50" y="168" width="88" height="22" rx="3" fill="#FF2D78"/>
+                <rect x="146" y="168" width="70" height="22" rx="3" fill="none" stroke="rgba(0,245,212,0.5)" stroke-width="0.8"/>
+                <rect x="294" y="78" width="222" height="124" rx="5" fill="rgba(0,245,212,0.025)" stroke="rgba(0,245,212,0.1)" stroke-width="0.8"/>
+                <path d="M294 202 L334 146 L366 166 L400 118 L436 140 L474 96 L516 116 L516 202 Z" fill="rgba(0,245,212,0.08)"/>
+                <circle cx="478" cy="100" r="16" fill="none" stroke="rgba(0,245,212,0.22)" stroke-width="0.8"/>
               </svg>
               <span class="work-tag">ЛЕНДИНГ</span>
             </div>
@@ -472,46 +463,26 @@
           <div class="work-face work-face--front">
             <div class="work-preview">
               <svg class="work-svg" viewBox="0 0 560 224" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="560" height="224" fill="#080707"/>
-                <!-- browser chrome -->
-                <rect x="10" y="6" width="540" height="212" rx="6" fill="#0f0c0c" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-                <rect x="10" y="6" width="540" height="22" rx="5" fill="#1a1010"/>
-                <rect x="10" y="20" width="540" height="8" fill="#1a1010"/>
-                <circle cx="27" cy="17" r="4" fill="rgba(255,45,120,0.6)"/>
-                <circle cx="41" cy="17" r="4" fill="rgba(255,200,50,0.3)"/>
-                <circle cx="55" cy="17" r="4" fill="rgba(0,245,212,0.3)"/>
-                <!-- Навигация -->
-                <rect x="10" y="28" width="540" height="20" fill="rgba(255,255,255,0.02)"/>
-                <rect x="10" y="28" width="3" height="20" fill="rgba(255,255,255,0.3)"/>
-                <text x="20" y="41" font-family="Arial,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)" letter-spacing="0.8">НАВИГАЦИЯ</text>
-                <text x="102" y="41" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.2)">— логотип, кнопка записи</text>
-                <!-- Главный экран -->
-                <rect x="10" y="48" width="540" height="52" fill="rgba(255,45,120,0.05)"/>
-                <rect x="10" y="48" width="3" height="52" fill="rgba(255,45,120,0.85)"/>
-                <text x="20" y="62" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(255,45,120,0.95)">ГЛАВНЫЙ ЭКРАН</text>
-                <text x="20" y="75" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.4)">Название, слоган, атмосферное фото барбершопа</text>
-                <text x="20" y="88" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.25)">Кнопка «Записаться» — главный призыв к действию</text>
-                <!-- Услуги и цены -->
-                <rect x="10" y="100" width="540" height="40" fill="rgba(0,245,212,0.04)"/>
-                <rect x="10" y="100" width="3" height="40" fill="rgba(0,245,212,0.8)"/>
-                <text x="20" y="114" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(0,245,212,0.9)">УСЛУГИ И ЦЕНЫ</text>
-                <text x="20" y="127" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.35)">Стрижки, бритьё, укладка — с описанием и стоимостью</text>
-                <text x="20" y="135" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.2)">Помогает клиенту понять что выбрать до визита</text>
-                <!-- Мастера -->
-                <rect x="10" y="140" width="265" height="34" fill="rgba(176,38,255,0.04)"/>
-                <rect x="10" y="140" width="3" height="34" fill="rgba(176,38,255,0.7)"/>
-                <text x="20" y="153" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="rgba(176,38,255,0.9)">МАСТЕРА</text>
-                <text x="20" y="165" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)">Фото и специализация команды</text>
-                <!-- Контакты -->
-                <rect x="279" y="140" width="271" height="34" fill="rgba(255,45,120,0.04)"/>
-                <rect x="279" y="140" width="3" height="34" fill="rgba(255,45,120,0.5)"/>
-                <text x="289" y="153" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="rgba(255,45,120,0.85)">КОНТАКТЫ</text>
-                <text x="289" y="165" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.3)">Адрес, телефон, соцсети</text>
-                <!-- Онлайн-запись -->
-                <rect x="10" y="174" width="540" height="44" fill="rgba(255,45,120,0.07)"/>
-                <rect x="10" y="174" width="3" height="44" fill="rgba(255,45,120,0.9)"/>
-                <text x="20" y="188" font-family="Arial,sans-serif" font-size="9.5" font-weight="bold" fill="rgba(255,45,120,0.95)">ОНЛАЙН-ЗАПИСЬ</text>
-                <text x="20" y="201" font-family="Arial,sans-serif" font-size="7.5" fill="rgba(255,255,255,0.35)">Форма записи: имя, телефон, выбор мастера и времени</text>
+                <rect width="560" height="224" fill="#090707"/>
+                <defs>
+                  <pattern id="bstripe" width="32" height="32" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect width="3" height="32" fill="rgba(255,45,120,0.04)"/>
+                  </pattern>
+                  <radialGradient id="bglow" cx="22%" cy="50%" r="45%">
+                    <stop offset="0%" stop-color="#FF2D78" stop-opacity="0.1"/>
+                    <stop offset="100%" stop-color="#FF2D78" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <rect width="560" height="224" fill="url(#bstripe)"/>
+                <rect width="560" height="224" fill="url(#bglow)"/>
+                <line x1="390" y1="16" x2="548" y2="208" stroke="rgba(255,45,120,0.16)" stroke-width="1.2"/>
+                <line x1="548" y1="16" x2="390" y2="208" stroke="rgba(255,45,120,0.16)" stroke-width="1.2"/>
+                <circle cx="469" cy="112" r="54" fill="none" stroke="rgba(255,45,120,0.1)" stroke-width="0.8"/>
+                <rect x="28" y="28" width="6" height="168" rx="3" fill="rgba(255,45,120,0.85)"/>
+                <rect x="50" y="40" width="220" height="20" rx="2" fill="rgba(255,255,255,0.92)"/>
+                <rect x="50" y="68" width="175" height="20" rx="2" fill="rgba(255,255,255,0.75)"/>
+                <rect x="50" y="96" width="255" height="20" rx="2" fill="rgba(255,45,120,0.65)"/>
+                <rect x="50" y="190" width="104" height="24" rx="3" fill="rgba(255,45,120,0.9)"/>
               </svg>
               <span class="work-tag">ЛЕНДИНГ</span>
             </div>
