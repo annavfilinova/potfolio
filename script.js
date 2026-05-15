@@ -252,8 +252,9 @@ if (contactForm) {
       document.querySelectorAll('.svc-btn').forEach(b => b.classList.remove('active'));
       document.getElementById('cf-service-val').value = '';
     } catch(err) {
-      btn.textContent = 'Ошибка — напиши в Telegram';
-      btn.style.cssText = 'background:#FF2D78;color:#fff;';
+      const msg = err.name === 'AbortError' ? 'Timeout' : (err.message || 'Unknown');
+      btn.textContent = 'Ошибка: ' + msg;
+      btn.style.cssText = 'background:#FF2D78;color:#fff;font-size:12px;';
       setTimeout(() => {
         btn.disabled = false;
         btn.textContent = origText;
