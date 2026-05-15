@@ -273,8 +273,8 @@ body::before {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   column-gap: 48px;
-  padding: 90px 80px 60px;
-  max-width: 1300px;
+  padding: 90px 56px 60px;
+  max-width: 1200px;
   margin: 0 auto;
   overflow: visible;
   z-index: 10;
@@ -643,9 +643,9 @@ h1 {
 /* ── SECTIONS ── */
 
 .section {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 48px;
+  padding: 70px 56px;
 }
 
 h2 {
