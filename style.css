@@ -1486,12 +1486,48 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background: var(--surface);
+  border: 1px solid rgba(255, 45, 120, .18);
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255,45,120,.05), 0 32px 80px rgba(0,0,0,.4);
+}
+
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan));
+}
+
+.contact-form::after {
+  content: '';
+  position: absolute;
+  top: -80px; left: 50%;
+  transform: translateX(-50%);
+  width: 360px; height: 160px;
+  background: radial-gradient(ellipse, rgba(255,45,120,.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.form-field,
+.form-services,
+.form-consent,
+.form-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .form-field {
@@ -1746,6 +1782,7 @@ h2 {
   .form-footer .btn-primary,
   .form-footer .btn-secondary { text-align: center; }
   .motion-stats { flex-direction: column; gap: 20px; padding: 40px 24px; }
+  .contact-form { padding: 24px 20px; border-radius: 12px; }
 }
 
 /* ── TOUCH DEVICES ── */
