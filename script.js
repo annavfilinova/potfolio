@@ -174,13 +174,27 @@ if (h1Cyan) {
 }
 
 // ── MARQUEE ──────────────────────────────────────────────
+// В разметке набор слов повторён дважды. Если одного набора не хватает
+// на ширину экрана, добавляем копии, иначе в конце цикла видна пустота.
 function initMarquees() {
   document.querySelectorAll('.marquee-track').forEach(track => {
-    const half = track.scrollWidth / 2;
-    track.style.setProperty('--mq-half', `-${half}px`);
+    if (!track.dataset.unitSize) track.dataset.unitSize = track.children.length / 2;
+    const unitSize = +track.dataset.unitSize;
+    const unitItems = [...track.children].slice(0, unitSize);
+    const unit = track.scrollWidth / (track.children.length / unitSize);
+    const need = track.parentElement.clientWidth + unit;
+    while (track.scrollWidth < need) {
+      unitItems.forEach(el => {
+        const copy = el.cloneNode(true);
+        copy.setAttribute('aria-hidden', 'true');
+        track.appendChild(copy);
+      });
+    }
+    track.style.setProperty('--mq-half', `-${unit}px`);
   });
 }
 document.fonts.ready.then(initMarquees);
+window.addEventListener('resize', initMarquees);
 
 // ── HAMBURGER MENU ───────────────────────────────────────
 const burger    = document.getElementById('navBurger');

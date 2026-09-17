@@ -855,7 +855,7 @@ h2 {
 }
 
 @keyframes marquee-right {
-  from { transform: translateX(calc(var(--mq-half, -50%) * -1)); }
+  from { transform: translateX(var(--mq-half, -50%)); }
   to   { transform: translateX(0); }
 }
 
